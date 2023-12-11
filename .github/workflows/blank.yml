@@ -1,0 +1,15 @@
+name: Print Repository Name
+
+on:
+  workflow_dispatch:
+    inputs:
+      repoName:
+        description: 'Name of the repository'
+        required: true
+
+jobs:
+  print-repo-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Repository Name
+        run: echo "Repository Name: ${github.event.inputs.repoName }}"
