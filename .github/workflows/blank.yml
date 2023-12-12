@@ -1,15 +1,12 @@
-name: Print Repository Name
-
+name: Print Message from Repo A or B
 on:
-  workflow_dispatch:
-    inputs:
-      repoName:
-        description: 'Name of the repository'
-        required: true
+  repository_dispatch:
+    types: [hello-event, hey-event]
 
 jobs:
-  print-repo-name:
+  print_message:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Repository Name
-        run: echo "Repository Name: ${github.event.inputs.repoName }}"
+      - name: Print Message
+        run: |
+          echo "Received: ${{ github.event.client_payload.message }}"
