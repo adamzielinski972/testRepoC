@@ -1,12 +1,13 @@
-name: Print Message from Repo A or B
-on:
-  repository_dispatch:
-    types: [hello-event, hey-event]
 
+name: Updated Workflow
+on:
+  push:
+    branches:
+      - main
 jobs:
-  print_message:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Message
-        run: |
-          echo "Received: ${{ github.event.client_payload.message }}"
+      - name: Checkout code
+        uses: actions/checkout@v2
+      # Add your workflow steps here
