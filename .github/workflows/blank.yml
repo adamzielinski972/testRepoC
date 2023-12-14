@@ -63,11 +63,11 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: war-artifact
-        path: DEV_DEPLOY/search.war
+        path: DEV_DEPLOY/search3.war
     - uses: actions/upload-artifact@v3
       with:
         name: config-artifact
-        path: conf/aws/search.yml
+        path: conf/aws/search3.yml
     env:
         GITHUBUSER: ${{ secrets.MY_GITHUB_USER }}
         GITHUBTOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
